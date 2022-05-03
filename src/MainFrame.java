@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
@@ -9,6 +10,7 @@ public class MainFrame extends JFrame{
   JPanel mainPanel;
   JPanel northPanel;
   JPanel southPanel;
+  JPanel centerPanel;
   
   public MainFrame() {
     setFrame();
@@ -27,10 +29,12 @@ public class MainFrame extends JFrame{
     this.mainPanel = new JPanel();
     this.northPanel = new JPanel();
     this.southPanel = new JPanel();
+    this.centerPanel = new JPanel();
 
     mainPanel.setBackground(Color.DARK_GRAY);
     northPanel.setBackground(Color.GRAY);
     mainPanel.setBackground(Color.GRAY);
+    centerPanel.setBackground(Color.LIGHT_GRAY);
 
 
     // layout settings for window
@@ -43,6 +47,11 @@ public class MainFrame extends JFrame{
       new BorderLayout()
     );
 
+    // layout settings for centerpanel
+    centerPanel.setLayout(
+      new FlowLayout(FlowLayout.CENTER)
+    );
+
     // panelsize settings
 
     mainPanel.setSize(500, 420);
@@ -52,6 +61,7 @@ public class MainFrame extends JFrame{
     //attach panels to main
     mainPanel.add(northPanel, BorderLayout.NORTH);
     mainPanel.add(southPanel, BorderLayout.SOUTH);
+    mainPanel.add(centerPanel);
 
     this.add(mainPanel);
     
